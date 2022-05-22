@@ -23,8 +23,8 @@
 | ------------------------ | ---------- | ------------------------------ |
 | product                  | string     | null: false                    |
 | explain                  | text       | null: false                    |
-| category_id              | string     | null: false                    |
-| state_id                 | string     | null: false                    |
+| category_id              | integer    | null: false                    |
+| state_id                 | integer    | null: false                    |
 | price                    | integer    | null: false                    |
 | delivery_cost_status_id  | integer    | null: false                    |
 | prefecture_id            | integer    | null: false                    |
@@ -50,15 +50,15 @@
 
 
 ## deliveryinformation テーブル
-| Column                | Type       | Options                        |
-| ------------------    | ---------- | ------------------------------ |
-| postal_code           | string     | null: false                    |
-| prefecture_id         | string     | null: false                    |
-| addresses             | string     | null: false                    |
-| city                  | string     | null: false                    |
-| building              | string     |                                |
-| phone_number          | string     | null: false                    |
-| purchase              | references | null: false, foreign_key: true |
+| Column                | Type        | Options                        |
+| ------------------    | ----------  | ------------------------------ |
+| postal_code           | string      | null: false                    |
+| prefecture_id         | integer     | null: false                    |
+| addresses             | string      | null: false                    |
+| city                  | string      | null: false                    |
+| building              | string      |                                |
+| phone_number          | string      | null: false                    |
+| purchase              | references  | null: false, foreign_key: true |
 
 ### Association
 
