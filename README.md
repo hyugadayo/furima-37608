@@ -2,18 +2,16 @@
 
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| nickname           | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-| last_name          | string | null: false |
-| first_name         | string | null: false |
-| last_name_kana     | string | null: false |
-| first_name_kana    | string | null: false |
-| birth_date_year    | string | null: false |
-| birth_date_mon     | string | null: false |
-| birth_date_day     | string | null: false |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false , unique: true|
+| encrypted_password | string | null: false               |
+| last_name          | string | null: false               |
+| first_name         | string | null: false               |
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
+| birtt_date         | date   | null: false               |
 
 ### Association
 
@@ -21,14 +19,17 @@
 - has_many :purchases
 
 ## items テーブル
-| Column             | Type       | Options                        |
-| ------------------ | ------     | -----------                    |
-| product            | string     | null: false                    |
-| explain            | text       | null: false                    |
-| category           | string     | null: false                    |
-| state              | string     | null: false                    |
-| price              | integer    | null: false                    |
-| user               | references | null: false, foreign_key: true |
+| Column                   | Type       | Options                        |
+| ------------------------ | ---------- | ------------------------------ |
+| product                  | string     | null: false                    |
+| explain                  | text       | null: false                    |
+| category_id              | string     | null: false                    |
+| state_id                 | string     | null: false                    |
+| price                    | integer    | null: false                    |
+| delivery_cost_status_id  | integer    | null: false                    |
+| prefecture_id            | integer    | null: false                    |
+| delivery_waiting_time_id | integer    | null: false                    |
+| user                     | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -37,7 +38,7 @@
 - has_one :purchase
 
 
-## purchase テーブル
+## purchases テーブル
 | Column            | Type       | Options                        |
 | user              | references | null: false, foreign_key: true |
 | item              | references | null: false, foreign_key: true |
@@ -49,15 +50,15 @@
 
 
 ## deliveryinformation テーブル
-| Column             | Type       | Options                        |
-| ------------------ | ------     | -----------                    |
-| postal_code        | string     | null: false                    |
-| prefecture         | string     | null: false                    |
-| addresses          | string     | null: false                    |
-| city               | string     | null: false                    |
-| building           | string     | null: false                    |
-| phone_number       | string     | null: false                    |
-| purchase           | references | null: false, foreign_key: true |
+| Column                | Type       | Options                        |
+| ------------------    | ---------- | ------------------------------ |
+| postal_code           | string     | null: false                    |
+| prefecture_id         | string     | null: false                    |
+| addresses             | string     | null: false                    |
+| city                  | string     | null: false                    |
+| building              | string     |                                |
+| phone_number          | string     | null: false                    |
+| purchase              | references | null: false, foreign_key: true |
 
 ### Association
 
