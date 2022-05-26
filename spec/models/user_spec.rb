@@ -69,7 +69,7 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Last name can't be blank")
       end
       it 'last_nameに半角文字が含まれていると登録できない' do
-        @user.last_name = 'test'
+        @user.last_name = 'テストtest'
         @user.valid?
         expect(@user.errors.full_messages).to include('Last name is invalid')
       end
@@ -79,7 +79,7 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("First name can't be blank")
       end
       it 'first_nameに半角文字が含まれていると登録できない' do
-        @user.first_name = 'test'
+        @user.first_name = 'テストtest'
         @user.valid?
         expect(@user.errors.full_messages).to include('First name is invalid')
       end
