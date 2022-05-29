@@ -8,9 +8,12 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  validates :category_id,nuwmericality: {other_than: 1, message: "can't be blank"} 
-  validates :state_id,nuwmericality: {other_than: 1, message: "can't be blank"}
-  validates :delivery_cost_status_id,nuwmericality: {other_than: 1, message: "can't be blank"}
-  validates :prefecture_id,nuwmericality: {other_than: 0,message: "can't be blank"}
-  validates :delivery_waiting_time_id,nuwmericality: {other_than:1, message: "can't be blank""'"}
+  validates :product, presence: true
+  validates :explain, presence: true
+  validates :category_id,presence: true, nuwmericality: {other_than: 1, message: "can't be blank"} 
+  validates :state_id,presence: true, nuwmericality: {other_than: 1, message: "can't be blank"}
+  validates :delivery_cost_status_id, presence: true, nuwmericality: {other_than: 1, message: "can't be blank"}
+  validates :prefecture_id, presence: true, nuwmericality: {other_than: 0,message: "can't be blank"}
+  validates :delivery_waiting_time_id, presence: true, nuwmericality: {other_than:1, message: "can't be blank""'"}
+  validates :image, presence: true
 end
