@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   belongs_to :state
   belongs_to :delivery_cost_status
   belongs_to :prefecture
+  belongs_to :delivery_waiting_time
   belongs_to :user
   has_one_attached :image
 
@@ -11,4 +12,5 @@ class Item < ApplicationRecord
   validates :state_id,nuwmericality: {other_than: 1, message: "can't be blank"}
   validates :delivery_cost_status_id,nuwmericality: {other_than: 1, message: "can't be blank"}
   validates :prefecture_id,nuwmericality: {other_than: 0,message: "can't be blank"}
+  validates :delivery_waiting_time_id,nuwmericality: {other_than:1, message: "can't be blank""'"}
 end
