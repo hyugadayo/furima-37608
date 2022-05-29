@@ -12,4 +12,6 @@ class User < ApplicationRecord
   validates :birth_date, presence: true
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze # 半角混合英数字
   validates :password, format: { with: VALID_PASSWORD_REGEX}
+
+  has_many :items
 end
