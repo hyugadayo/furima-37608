@@ -1,16 +1,9 @@
 class DeliveryWaitingTime < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--'},
-    { id: 2, name: '1~2日で発送'},
-    { id: 3, name: '2~3日で発送'},
-    { id: 4, name: '4~7日で発送'},
-    { id: 5, name: 'インテリア・住まい・小物'},
-    { id: 6, name: '本・音楽・ゲーム'},
-    { id: 7, name: 'おもちゃ・ホビー・キッズ'},
-    { id: 8, name: '家電・スマホ・カメラ'},
-    { id: 9, name: 'レジャー・スポーツ'},
-    { id: 10, name: 'ハンドメイド'},
-    { id: 11, name: 'その他'}
+    { id: 1, name: '--' },
+    { id: 2, name: '1~2日で発送' },
+    { id: 3, name: '2~3日で発送' },
+    { id: 4, name: '4~7日で発送' },
   ]
 
   include ActiveHash::Associations
