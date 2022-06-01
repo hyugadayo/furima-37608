@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+function taxPrice() {
   // 下記 価格入力欄の要素取得 //
   const itemPrice = document.getElementById('item-price');
   // 下記 文字入力のたびイベント発生 //
@@ -14,4 +14,6 @@ window.addEventListener('load', () => {
     // 下記 販売利益計算およびフォームの書き換え //
     profit.innerHTML = Math.floor(inputValue * 0.9)
   })
-});
+};
+
+window.addEventListener('load', taxPrice)
