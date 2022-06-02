@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   validates :state_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :delivery_cost_status_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
-  validates :delivery_waiting_time_id, numericality: { other_than: 1, message: "can't be blank""'" }
+  validates :delivery_waiting_time_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :image, presence: true
   validates :price, presence: true, format: { with: /\A-?[0-9]+(\.[0-9]+)?\z/ },
                     numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
