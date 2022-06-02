@@ -65,7 +65,7 @@ RSpec.describe Item, type: :model do
       it 'delivery_waiting_timeが[---]だと登録できない' do
         @item.delivery_waiting_time = DeliveryWaitingTime.find(1)
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery waiting time can't be blank'")
+        expect(@item.errors.full_messages).to include("Delivery waiting time can't be blank")
       end
       it 'priceが空だと登録できない' do
         @item.price = ''
