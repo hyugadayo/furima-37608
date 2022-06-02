@@ -89,7 +89,7 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Last name kana can't be blank")
       end
       it 'last_name_kanaにカタカナ以外が含まれていると登録できない' do
-        @user.last_name_kana ='test'
+        @user.last_name_kana = 'test'
         @user.valid?
         expect(@user.errors.full_messages).to include('Last name kana is invalid')
       end
@@ -99,7 +99,7 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("First name kana can't be blank")
       end
       it 'first_name_kanaにカタカナ以外が含まれていると登録できない' do
-        @user.first_name_kana ='test'
+        @user.first_name_kana = 'test'
         @user.valid?
         expect(@user.errors.full_messages).to include('First name kana is invalid')
       end
