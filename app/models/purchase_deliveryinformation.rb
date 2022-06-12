@@ -1,6 +1,6 @@
 class PurchaseDeliveryinformation
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :postal_code, :prefecture, :address, :city, :building, :phone_number, 
+  attr_accessor :user_id, :item_id, :postal_code, :prefecture, :address, :city, :building, :phone_number
 
   with_options presence: true do
     validates :user_id
@@ -14,7 +14,6 @@ class PurchaseDeliveryinformation
 
   def save
     purchase =Purchase.create(user_id: user_id, item_id: item_id)
-    
     Deliveryinformation.create(postal_code: postal_code,prefecture: prefecture, address: address, city: city, building: building, phone_number: phone_number, purchase_id: purchase.id)
   end
 end
