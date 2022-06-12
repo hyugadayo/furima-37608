@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :delivery_waiting_time
   belongs_to :user
+  has_one :purchase
   has_one_attached :image
 
   validates :product, presence: true, length: { maximum: 40 }
