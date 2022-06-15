@@ -3,9 +3,7 @@ class PurchasesController < ApplicationController
   def index
     @purchase_deliveryinformation = PurchaseDeliveryinformation.new
     @item = Item.find(params[:item_id])
-    if current_user.id == @item.user_id || Purchase.exists?(item_id: @item.id)
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.id == @item.user_id || Purchase.exists?(item_id: @item.id)
   end
 
   def create
@@ -19,7 +17,10 @@ class PurchasesController < ApplicationController
   end
 
   private
+
   def purchase_params
-    params.require(:purchase_deliveryinformation).permit(:postal_code, :prefecture_id, :address, :city, :building, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id])
+    params.require(:purchase_deliveryinformation).permit(:postal_code, :prefecture_id, :address, :city, :building, :phone_number).merge(
+      user_id: current_user.id, item_id: params[:item_id]
+    )
   end
 end
