@@ -49,27 +49,27 @@ RSpec.describe PurchaseDeliveryinformation, type: :model do
         @purchase_deliveryinformation.valid?
         expect(@purchase_deliveryinformation.errors.full_messages).to include("Phone number can't be blank")
       end
-      it 'phone_numberは半角数字しか登録できない' do
+      it 'phone_numberは半角数値のみしか保存できない' do
         @purchase_deliveryinformation.phone_number = 'テスト1234テスト'
         @purchase_deliveryinformation.valid?
         expect(@purchase_deliveryinformation.errors.full_messages).to include('Phone number is invalid')
       end
-      it 'phone_numberは10桁、11桁以外は登録できない' do
+      it 'phone_numberは10桁、11桁以外は保存できない' do
         @purchase_deliveryinformation.phone_number = '12345'
         @purchase_deliveryinformation.valid?
         expect(@purchase_deliveryinformation.errors.full_messages).to include('Phone number is invalid')
       end
-      it 'userが紐付いていないと登録できない' do
+      it 'userが紐付いていないと保存できない' do
         @purchase_deliveryinformation.user_id = nil
         @purchase_deliveryinformation.valid?
         expect(@purchase_deliveryinformation.errors.full_messages).to include("User can't be blank")
       end
-      it 'itemが紐付いていないと登録できない' do
+      it 'itemが紐付いていないと保存できない' do
         @purchase_deliveryinformation.item_id = nil
         @purchase_deliveryinformation.valid?
         expect(@purchase_deliveryinformation.errors.full_messages).to include("Item can't be blank")
       end
-      it 'tokenが空では登録できないこと' do
+      it 'tokenが空では保存できないこと' do
         @purchase_deliveryinformation.token = nil
         @purchase_deliveryinformation.valid?
         expect(@purchase_deliveryinformation.errors.full_messages).to include("Token can't be blank")
