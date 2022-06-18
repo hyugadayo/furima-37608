@@ -9,7 +9,7 @@ RSpec.describe PurchaseDeliveryinformation, type: :model do
     end
 
     context '内容に問題ない場合' do
-      it '全ての値が正しく入力できれば保存できること' do
+      it 'tokenと全ての値が正しく入力できれば保存できること' do
         expect(@purchase_deliveryinformation).to be_valid
       end
       it 'buildingは空でも保存できること' do
@@ -68,6 +68,11 @@ RSpec.describe PurchaseDeliveryinformation, type: :model do
         @purchase_deliveryinformation.item_id = nil
         @purchase_deliveryinformation.valid?
         expect(@purchase_deliveryinformation.errors.full_messages).to include("Item can't be blank")
+      end
+      it 'tokenが空では登録できないこと' do
+        @purchase_deliveryinformation.token = nil
+        @purchase_deliveryinformation.valid?
+        expect(@purchase_deliveryinformation.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
