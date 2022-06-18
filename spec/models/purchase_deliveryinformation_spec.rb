@@ -59,6 +59,11 @@ RSpec.describe PurchaseDeliveryinformation, type: :model do
         @purchase_deliveryinformation.valid?
         expect(@purchase_deliveryinformation.errors.full_messages).to include('Phone number is invalid')
       end
+      it 'phone_numberが12桁以上だと保存できない' do
+        @purchase_deliveryinformation.phone_number = '123456789101112'
+        @purchase_deliveryinformation.valid?
+        expect(@purchase_deliveryinformation.errors.full_messages).to include('Phone number is invalid')
+      end
       it 'userが紐付いていないと保存できない' do
         @purchase_deliveryinformation.user_id = nil
         @purchase_deliveryinformation.valid?
