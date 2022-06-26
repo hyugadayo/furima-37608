@@ -88,6 +88,7 @@
         <div class="comment">
           <p class="user-info"><%= comment.user.nickname %>： </p>
           <p><%= comment.text%></p>
+          <p><%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></p>
         </div>
       <% end %>
     </div>
