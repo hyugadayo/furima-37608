@@ -1,0 +1,22 @@
+#previews{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.preview-image{
+  height: 100px;
+  width: 100px;
+
+  margin-right: 8px;
+}
+
+.image-delete-button {
+  width: 100px;
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+  margin-bottom: 0px 8px 5px 0px;
+  
+}
+
+

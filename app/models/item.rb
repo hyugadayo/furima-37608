@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :delivery_waiting_time
   belongs_to :user
   has_one :purchase
-  has_one_attached :image
+  has_many_attached :images
 
   validates :product, presence: true, length: { maximum: 40 }
   validates :explain, presence: true, length: { maximum: 1000 }
@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   validates :delivery_cost_status_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
   validates :delivery_waiting_time_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :image, presence: true
+  validates :images, presence: true, length: { minimum: 1, maximum:10, message: "は1枚以上5枚以下にしてください"}
   validates :price, presence: true, format: { with: /\A-?[0-9]+(\.[0-9]+)?\z/ },
                     numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
 end
