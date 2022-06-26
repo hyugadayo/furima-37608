@@ -1,5 +1,8 @@
 import consumer from "./consumer"
 
+if(location.pathname.match(/\/items\/\d/)){
+  console.log("読み込み完了")
+
 consumer.subscriptions.create("CommentChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
@@ -13,3 +16,4 @@ consumer.subscriptions.create("CommentChannel", {
     // Called when there's incoming data on the websocket for this channel
   }
 });
+}
