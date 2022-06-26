@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :delivery_waiting_time
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_one :purchase
   has_many_attached :images
 
