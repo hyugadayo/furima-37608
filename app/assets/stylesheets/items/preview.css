@@ -10,13 +10,6 @@
   margin-right: 8px;
 }
 
-.other-images {
-  display: flex;
-}
-
-.other-image{
-  margin-right: 10px;
-}
 .image-delete-button {
   width: 100px;
   text-align: center;
