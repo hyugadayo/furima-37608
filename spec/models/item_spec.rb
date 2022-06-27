@@ -18,9 +18,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('User must exist')
       end
       it '画像がないと出品できない' do
-        @item.image = nil
+        @item.images = nil
         expect(@item.valid?).to eq(false)
-        expect(@item.image.attached?).to eq(false)
+        expect(@item.images.attached?).to eq(false)
       end
       it 'productが空だと登録できない' do
         @item.product = ''
