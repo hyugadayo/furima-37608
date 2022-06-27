@@ -1,0 +1,44 @@
+#comments{
+  background-color: #fff;
+  height: 30vh;
+  width: 40vw;
+  margin: 10px 0px 50px 0px;
+}
+
+.comment-title{
+  font-size:20px;
+  width: 10vw;
+  height: 30px;
+  margin: 10px auto;
+  align-items: center;
+  text-align: center;
+  color: floralwhite;
+  background-color: #3CCACE;
+  border-radius: 100px;
+}
+
+#comment-area{
+  height: calc(100% - 50px);
+  margin-top: 10px;
+  border: solid 2px #dedede;
+  overflow-x: scroll;
+}
+
+.comment-text {
+  display: block;
+  margin-top: 20px;
+}
+
+#comment{
+  display: flex;
+  overflow-y: scroll;
+}
+
+.comment p{
+  margin-left: 10px;
+}
+
+.user-info{
+  color: gray;
+  font-weight: bold;
+}
