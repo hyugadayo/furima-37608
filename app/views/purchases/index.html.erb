@@ -5,16 +5,19 @@
     <h1 class='transaction-title-text'>
       購入内容の確認
     </h1>
+          <h2 class='buy-item-text'>
+            <%= @item.product %>
+          </h2>
     <%# 購入内容の表示 %>
     <div class='buy-item-info'>
-      <%= image_tag @item.image, class: 'buy-item-img' %>
-      <div class='buy-item-right-content'>
-        <h2 class='buy-item-text'>
-          <%= @item.product %>
-        </h2>
-        <div class='buy-item-price'>
-          <p class='item-price-text'>¥<%= @item.price %></p>
-          <p class='item-price-sub-text'><%= @item.delivery_cost_status.name %></p>
+      <div class="buy-item-img">
+        <% @item.images.each do |image| %>
+            <%= image_tag image ,class:"item-box-img"%>
+        <% end %>      
+        <div class='buy-item-right-content'>
+          <div class='buy-item-text'>
+            <p class='item-price-sub-text'><%= @item.delivery_cost_status.name %></p>
+          </div>
         </div>
       </div>
     </div>
